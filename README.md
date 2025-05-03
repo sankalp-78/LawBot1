@@ -1,5 +1,3 @@
-Perfect, Sankalp. Based on your request, here’s a **customized `README.md`** for your `LawBot1` project, following the same structure and style:
-
 ---
 
 ````markdown
