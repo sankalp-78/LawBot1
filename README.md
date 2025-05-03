@@ -92,9 +92,6 @@ We welcome contributions to improve LawBot1! To contribute:
    ```
 5. Submit a pull request for review.
 
-## Demo
-
-[![Watch the Demo](https://img.shields.io/badge/Demo-Click%20Here-blue?logo=youtube)](your_demo_link_here)
 
 ## Contact
 
