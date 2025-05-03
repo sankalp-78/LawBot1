@@ -1,0 +1,153 @@
+.chat-window {
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
+  width: 100%;
+  margin: 20px auto;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.select-mode-section {
+  padding: 1rem;
+  background-color: var(--select-mode-nav);
+  border-bottom: 1px solid var(--select-border);
+  text-align: center;
+}
+
+.select-mode-section h2 {
+  color: var(--text-color);
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.select-mode-section select {
+  background-color: var(--select-mode-bg);
+  color: var(--select-mode-text);
+  border: 1px solid var(--select-border);
+  padding: 0.5rem 2.5rem 0.5rem 1rem;
+  font-size: 1rem;
+  width: 100%;
+  max-width: 300px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.select-mode-section select:hover {
+  border-color: var(--link-color);
+}
+
+.select-mode-section select:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(51, 133, 255, 0.2);
+}
+
+.messages {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+}
+
+.message {
+  margin: 10px 0;
+  padding: 8px 12px;
+  border-radius: 4px;
+  max-width: 70%;
+}
+
+.message.user {
+  background-color: #e7f3ff;
+  margin-left: auto;
+  text-align: left;
+}
+
+.message.bot {
+  background-color: #f8f9fa;
+  margin-right: auto;
+  text-align: left;
+}
+
+/* Fade-out animation for user messages */
+.message.user.fade-out {
+  animation: fadeOut 0.5s ease forwards;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+/* Style for the "Responding..." placeholder */
+.message.bot.responding {
+  background-color: #f8f9fa;
+  margin-right: auto;
+  text-align: left;
+  max-width: 70%;
+  opacity: 0.7; /* Slightly faded to indicate processing */
+}
+
+.message span:first-child {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.message.bot p {
+  margin: 0 0 5px;
+}
+
+.message.bot strong {
+  font-weight: bold;
+}
+
+.message.bot em {
+  font-style: italic;
+}
+
+.message.bot ul,
+.message.bot ol {
+  margin: 5px 0 5px 20px;
+  padding: 0;
+}
+
+.message.bot li {
+  margin: 2px 0;
+}
+
+.message.bot code {
+  background-color: #e9ecef;
+  padding: 2px 4px;
+  border-radius: 4px;
+}
+
+.input-area {
+  display: flex;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+}
+
+.input-area input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px 0 0 4px;
+}
+
+.input-area button {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+}
+
+.input-area button:hover {
+  background-color: #0056b3;
+}

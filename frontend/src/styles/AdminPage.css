@@ -1,0 +1,375 @@
+.admin-page {
+  padding: 2rem;
+  min-height: calc(100vh - 64px);
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.status-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.status-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #ccc;
+}
+
+.status-dot.online {
+  background-color: #4CAF50;
+  box-shadow: 0 0 8px #4CAF50;
+}
+
+.status-dot.offline {
+  background-color: #f44336;
+  box-shadow: 0 0 8px #f44336;
+}
+
+.admin-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.metrics-card,
+.engagement-card,
+.users-card,
+.chat-history-card {
+  background-color: var(--card-bg);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--link-color);
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.metric-item,
+.stat-item {
+  text-align: center;
+  padding: 1rem;
+  background-color: var(--background-color);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--link-color);
+}
+
+.metric-item h3,
+.stat-item h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+  color: var(--text-color);
+}
+
+.metric-item p,
+.stat-item p {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--link-color);
+}
+
+.users-list,
+.chat-history-list {
+  margin-top: 1rem;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.user-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid var(--link-color);
+}
+
+.user-info {
+  display: flex;
+  gap: 1rem;
+}
+
+.user-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.user-actions button {
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.user-actions button:first-child {
+  background-color: var(--link-color);
+  color: white;
+}
+
+.user-actions button:last-child {
+  background-color: #f44336;
+  color: white;
+}
+
+.chat-item {
+  padding: 1rem;
+  border-bottom: 1px solid var(--link-color);
+}
+
+.chat-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--text-color);
+  opacity: 0.8;
+}
+
+.chat-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.chat-content p {
+  margin: 0;
+}
+
+.edit-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: var(--card-bg);
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  width: 100%;
+  max-width: 400px;
+  box-shadow: var(--card-shadow);
+}
+
+.modal-content h2 {
+  margin-bottom: 1.5rem;
+}
+
+.modal-content input,
+.modal-content select {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border: 1px solid var(--link-color);
+  border-radius: var(--border-radius);
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.modal-actions button {
+  padding: 0.8rem 1.5rem;
+  border-radius: var(--border-radius);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.modal-actions button:first-child {
+  background-color: var(--link-color);
+  color: white;
+}
+
+.modal-actions button:last-child {
+  background-color: #666;
+  color: white;
+}
+
+/* Scrollbar styling */
+.users-list::-webkit-scrollbar,
+.chat-history-list::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.users-list::-webkit-scrollbar-track,
+.chat-history-list::-webkit-scrollbar-track {
+  background: var(--background-color);
+  border-radius: 4px;
+}
+
+.users-list::-webkit-scrollbar-thumb,
+.chat-history-list::-webkit-scrollbar-thumb {
+  background: var(--link-color);
+  border-radius: 4px;
+}
+
+.users-list::-webkit-scrollbar-thumb:hover,
+.chat-history-list::-webkit-scrollbar-thumb:hover {
+  background: var(--button-bg);
+}
+
+.admin-page-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: var(--bg-color);
+}
+
+.admin-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--card-bg);
+  box-shadow: var(--card-shadow);
+  border-bottom: 1px solid var(--link-color);
+}
+
+.admin-nav-left {
+  display: flex;
+  align-items: center;
+}
+
+.admin-nav-title {
+  margin: 0;
+  color: var(--text-color);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.admin-nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.admin-content {
+  flex: 1;
+  padding: 2rem;
+  overflow-y: auto;
+  background-color: var(--bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.admin-table-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: var(--card-bg);
+  border-radius: var(--border-radius);
+  box-shadow: var(--card-shadow);
+}
+
+/* Dark mode styles */
+[data-theme="dark"] .admin-navbar {
+  background-color: var(--card-bg);
+  border-bottom: 1px solid var(--link-color);
+}
+
+[data-theme="dark"] .admin-nav-title {
+  color: var(--text-color);
+}
+
+[data-theme="dark"] .admin-content {
+  background-color: var(--bg-color);
+}
+
+[data-theme="dark"] .admin-table-container {
+  background-color: var(--card-bg);
+  border: 1px solid var(--link-color);
+}
+
+[data-theme="dark"] .MuiTableCell-root {
+  color: var(--text-color) !important;
+  border-bottom: 1px solid var(--link-color) !important;
+}
+
+[data-theme="dark"] .MuiTableHead-root .MuiTableCell-root {
+  background-color: var(--card-bg) !important;
+  border-bottom: 2px solid var(--link-color) !important;
+}
+
+[data-theme="dark"] .MuiDialog-paper {
+  background-color: var(--card-bg) !important;
+  color: var(--text-color) !important;
+}
+
+[data-theme="dark"] .MuiDialogTitle-root {
+  border-bottom: 1px solid var(--link-color) !important;
+}
+
+[data-theme="dark"] .MuiDialogActions-root {
+  border-top: 1px solid var(--link-color) !important;
+}
+
+/* Scrollbar styles */
+.admin-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.admin-content::-webkit-scrollbar-track {
+  background: var(--card-bg);
+  border-radius: 4px;
+}
+
+.admin-content::-webkit-scrollbar-thumb {
+  background: var(--link-color);
+  border-radius: 4px;
+}
+
+.admin-content::-webkit-scrollbar-thumb:hover {
+  background: var(--link-hover-color);
+}
+
+/* Table hover effect */
+.MuiTableRow-root:hover {
+  background-color: var(--hover-bg) !important;
+  transition: background-color 0.2s ease;
+}
+
+/* Dialog animations */
+.MuiDialog-paper {
+  animation: dialogSlideIn 0.3s ease-out;
+}
+
+@keyframes dialogSlideIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+} 
